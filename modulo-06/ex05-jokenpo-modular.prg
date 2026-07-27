@@ -2,15 +2,15 @@ Function Main()
     Local cJogadaUser, cJogadaCPU, cResultado
     Local cContinuar := "S"
 
-    CLS
+    Cls
     Do While Upper(cContinuar) == "S"
-        CLS
+        Cls
         QOut("==========================================")
         QOut("            JOKENPÔ MODULAR               ")
         QOut("==========================================")
         QOut("Opções: [P]edra | P[A]pel | [T]esoura")
         
-        ACCEPT "Sua jogada: " TO cJogadaUser
+        Accept "Sua jogada: " To cJogadaUser
         cJogadaUser := Upper(AllTrim(cJogadaUser))
 
         If .NOT. ValidarJogada(cJogadaUser)
@@ -28,7 +28,7 @@ Function Main()
         QOut("Resultado  : " + cResultado)
         QOut("==========================================")
         
-        ACCEPT "Deseja jogar novamente? (S/N): " TO cContinuar
+        Accept "Deseja jogar novamente? (S/N): " To cContinuar
     EndDo
 Return Nil
 
@@ -44,24 +44,25 @@ Function SortearJogadaCPU()
 Return cJogada
 
 Function ValidarJogada(cJogada)
-Return (cJogada $ "P|A|T") .AND. Len(cJogada) == 1
+    // Usando "PAT" sem barras para evitar que '|' seja aceito como jogada
+Return (cJogada $ "PAT") .AND. Len(cJogada) == 1
 
 Function DefinirVencedor(cJ1, cJ2)
     If cJ1 == cJ2
-    Return "EMPATE!"
+        Return "EMPATE!"
     EndIf
 
     If (cJ1 == "P" .AND. cJ2 == "T") .OR. ;
-       (cJ1 == "A" .AND. cJ1 == "P") .OR. ;
+       (cJ1 == "A" .AND. cJ2 == "P") .OR. ;
        (cJ1 == "T" .AND. cJ2 == "A")
-Return "VOCÊ VENCEU!"
-EndIf
+        Return "VOCÊ VENCEU!"
+    EndIf
 Return "CPU VENCEU!"
 
 Function ExibirNomeJogada(cSigla)
     Do Case
-        Case cSigla == "P" ; RETURN "Pedra"
-        Case cSigla == "A" ; RETURN "Papel"
-        Case cSigla == "T" ; RETURN "Tesoura"
+        Case cSigla == "P" ; Return "Pedra"
+        Case cSigla == "A" ; Return "Papel"
+        Case cSigla == "T" ; Return "Tesoura"
     EndCase
 Return ""
