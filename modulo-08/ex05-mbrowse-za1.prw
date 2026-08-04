@@ -1,9 +1,9 @@
 #include "totvs.ch"
 
 /*/{Protheus.doc} STTIP002
-    Rotina de navegação e exibição em mBrowse para a tabela ZA1.
+    Rotina de navegaÃ§Ã£o e exibiÃ§Ã£o em mBrowse para a tabela ZA1.
     @type  Function
-    @author Aluno
+    @author Pedro Almeida
     @since 2026-08-04
 /*/
 USER FUNCTION STTIP002()
