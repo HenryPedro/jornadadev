@@ -3,7 +3,7 @@
 /*/{Protheus.doc} VALEXCSZ1
     Desafio 7a: Valida integridade referencial antes da exclusao de um Contato.
     @type  Function
-    @author Aluno
+    @author Pedro Almeida
     @since 2026-08-04
     @return Logical, .T. se pode excluir, .F. se houver interacoes vinculadas
 /*/
@@ -12,7 +12,7 @@ USER FUNCTION VALEXCSZ1()
 
 	// Verifica se existem interacoes associadas na tabela SZ2
 	IF ExistCpo("SZ2", xFilial("SZ2") + SZ1->Z1_CODIGO, 1)
-		MsgStop("Nao eh possivel excluir este contato pois existem Interacoes (SZ2) vinculadas a ele!", "Integridade Referencial")
+		MsgStop("Nao e possivel excluir este contato pois existem Interacoes (SZ2) vinculadas a ele!", "Integridade Referencial")
 		lPodeExcluir := .F.
 	ENDIF
 
