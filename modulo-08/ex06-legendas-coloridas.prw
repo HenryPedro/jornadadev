@@ -3,7 +3,7 @@
 /*/{Protheus.doc} STTIP002
     Rotina mBrowse com aplicacao de regras de legendas coloridas (aColors).
     @type  Function
-    @author Aluno
+    @author Pedro Almeida
     @since 2026-08-04
 /*/
 USER FUNCTION STTIP002()
