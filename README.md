@@ -138,3 +138,39 @@ O sistema estende os módulos nativos de **Compras (SIGACOM)**, conectando o cad
     ├── 📜 STTZZLIB.PRW             # Biblioteca de funções comuns, cálculos e logs
     ├── 📜 TCC.PRJ                  # Projeto de compilação no TOTVS Developer Studio
     └── 📜 TCC-Documentacao.docx    # Documentação técnica e operacional do projeto
+```
+---
+# 🛠️ Tecnologias e Ecossistema
+
+* **Linguagens de Programação:**
+  * **Harbour:** Fundamentação de lógica, algoritmos, manipulação de matrizes e estruturas de controle xBase (Módulos 01 a 06).
+  * **ADVPL (Advanced Protheus Language):** Construção de rotinas `mBrowse`, `AxCadastro`, manipulação do dicionário de dados e regras de negócio corporativas (Módulos 07 a 09 e TCC).
+  * **TL++ (TOTVS Language Plus Plus):** Aplicação de POO, orientação a objetos e refatorações modernas dentro do ecossistema.
+* **Ambiente de Desenvolvimento (IDE) & Ferramentas:**
+  * **VS Code:** Editor principal com a extensão oficial **TDS (TOTVS Developer Studio)** configurada para compilação e *debug*.
+  * **AppServer / SmartClient Protheus:** Servidor de aplicação local para compilação do RPO e execução das rotinas.
+* **Dicionários de Dados e Banco de Dados:**
+  * Estruturas relacionais nativas do Protheus mapeadas via arquivos/tabelas de sistema: **`SX2`** (Tabelas), **`SX3`** (Campos), **`SX7`** (Gatilhos), **`SIX`** (Índices) e **`SXB`** (Consultas Padrão).
+* **Módulos do ERP:**
+  * **SIGACOM (Compras):** Módulo central onde foram acoplados os menus, permissões e rotinas de qualidade ISO 9001 (`STTZZ1` e `STTZZ2`).
+* **Conceitos de Engenharia de Software Aplicados:**
+  * Programação Estruturada, Orientação a Objetos (POO), Validações Referenciais (`ExistCpo`), Tolerância e Auditoria de Qualidade, Resiliência com `BEGIN SEQUENCE`, Gestão de Transações (*Rollback*) e Modularização em Bibliotecas (`STTZZLIB`).
+
+---
+
+## 💻 Como Explorar os Códigos
+
+Os códigos deste repositório acompanham uma jornada evolutiva dividida em duas grandes etapas:
+
+1. **Módulos 01 ao 06 (Fundamentos em Harbour):** Exercícios focados em lógica de programação pura, algoritmos, arrays, funções e arquivos executáveis `.prg`. Podem ser lidos diretamente ou executados via interpretador Harbour.
+2. **Módulos 07 ao 09 + TCC (Ecossistema Protheus / ADVPL):** Fontes `.prw` que exigem o ambiente TOTVS para compilação. Mesmo sem o ambiente Protheus ativo, todo o código foi estruturado de forma legível e autoexplicativa (com inclusão do Dicionário de Dados mapeado em arquivo).
+
+---
+
+## 🚀 Passo a Passo para Execução Local
+
+### 1. Clonando o Repositório
+Abra o seu terminal e execute o comando:
+```bash
+git clone https://github.com/HenryPedro/TOTVS-JornadaDEV.git
+cd TOTVS-JornadaDEV
