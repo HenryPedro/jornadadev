@@ -1,0 +1,11 @@
+CAMPO;TIPO;TAMANHO;DECIMAL;TITULO;DESCRICAO;CONTEXTO;X3_INIPAD;X3_VALID;X3_RELACAO
+ZZ1_FILIAL;C;2;0;Filial;Filial do Sistema;Real;xFilial("ZZ1");;
+ZZ1_CODIGO;C;6;0;Codigo NC;Codigo da Nao Conformidade;Real;U_ZZ1ProxCod();;
+ZZ1_FORNEC;C;6;0;Fornecedor;Codigo do Fornecedor;Real;;ExistCpo("SA2",xFilial("SA2")+M->ZZ1_FORNEC+M->ZZ1_LOJAFO,1);
+ZZ1_LOJAFO;C;2;0;Loja Forn.;Loja do Fornecedor;Real;;;
+ZZ1_NOMEFO;C;40;0;Nome Forn.;Nome do Fornecedor;Virtual;;;POSICIONE("SA2",1,xFilial("SA2")+M->ZZ1_FORNEC+M->ZZ1_LOJAFO,"A2_NOME")
+ZZ1_DATA;D;8;0;Data Ocorr.;Data da Nao Conformidade;Real;dDataBase;;
+ZZ1_DESCR;C;100;0;Descricao;Descricao Resumida do Desvio;Real;;;
+ZZ1_VALCER;D;8;0;Val. Certif.;Data Validade Certificado;Real;;M->ZZ1_VALCER >= dDataBase;
+ZZ1_TOLERA;N;5;2;Tolerancia %;Percentual de Tolerancia Aceito;Real;;M->ZZ1_TOLERA >= 0 .AND. M->ZZ1_TOLERA <= 100;
+ZZ1_STATUS;C;1;0;Status;Status do Processo;Real;"1";;

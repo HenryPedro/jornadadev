@@ -1,0 +1,18 @@
+## Estrutura de Gatilhos (Dicionário SX7)
+Conforme exigido, os seguintes gatilhos foram mapeados para a regra de negócio (Fase 3):
+
+**Na tabela ZZ1:**
+* Campo Origem: `ZZ1_FORNEC` | Destino: `ZZ1_NOMEFO` 
+  * Regra: `POSICIONE("SA2", 1, xFilial("SA2")+M->ZZ1_FORNEC+M->ZZ1_LOJAFO, "A2_NOME")`
+
+**Na tabela ZZ2:**
+* Campo Origem: `ZZ2_CONFOR` | Destino: `ZZ2_FORNEC`
+  * Regra: `POSICIONE("ZZ1", 1, xFilial("ZZ1")+M->ZZ2_CONFOR, "ZZ1_FORNEC")`
+* Campo Origem: `ZZ2_CONFOR` | Destino: `ZZ2_LOJAFO`
+  * Regra: `POSICIONE("ZZ1", 1, xFilial("ZZ1")+M->ZZ2_CONFOR, "ZZ1_LOJAFO")`
+* Campo Origem: `ZZ2_CONFOR` | Destino: `ZZ2_NOMEFO`
+  * Regra: `POSICIONE("SA2", 1, xFilial("SA2")+M->ZZ2_FORNEC+M->ZZ2_LOJAFO, "A2_NOME")`
+* Campo Origem: `ZZ2_DATA` | Destino: `ZZ2_DATA`
+  * Regra: `If(INCLUI, dDataBase, ZZ2->ZZ2_DATA)`
+* Campo Origem: `ZZ2_HORA` | Destino: `ZZ2_HORA`
+  * Regra: `If(INCLUI, Time(), ZZ2->ZZ2_HORA)` 
